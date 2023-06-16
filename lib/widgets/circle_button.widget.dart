@@ -1,29 +1,37 @@
 import 'package:flutter/material.dart';
 
-class CircleButton extends StatelessWidget {
+class CircleButton extends StatefulWidget {
   const CircleButton(
       {super.key,
-      required this.content,
+      required this.text,
       required this.action,
-      required this.color});
-  final Widget content;
+      required this.size});
+  final String text;
   final dynamic action;
-  final Color color;
+  final double size;
 
   @override
+  State<CircleButton> createState() => _CircleButtonState();
+}
+
+class _CircleButtonState extends State<CircleButton> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 60,
-      height: 60,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: color,
-        border: Border.all(
-          color: Colors.grey.shade300,
-          width: 2.0,
-        ),
-      ),
-      child: InkWell(onTap: () => action(), child: Center(child: content)),
+    return InkWell(
+      child: Container(
+          width: widget.size,
+          height: widget.size,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.white.withAlpha(40),
+          ),
+          child: Center(
+            child: Text(widget.text,
+                style: const TextStyle(fontSize: 16.0, color: Colors.white)),
+          )),
+      onTap: () {
+        widget.action();
+      },
     );
   }
 }

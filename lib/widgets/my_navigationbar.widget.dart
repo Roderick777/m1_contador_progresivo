@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:m1_contador_progresivo/pages/config.page.dart';
-import 'package:m1_contador_progresivo/pages/home.page.dart';
-import 'package:m1_contador_progresivo/helpers/navigate.helper.dart';
+import 'package:m1_contador_progresivo/providers/config.provider.dart';
+import 'package:provider/provider.dart';
 
 class MyNavigationBar extends StatefulWidget {
   const MyNavigationBar({super.key});
@@ -13,12 +12,19 @@ class MyNavigationBar extends StatefulWidget {
 class _MyNavigationBarState extends State<MyNavigationBar> {
   @override
   Widget build(BuildContext context) {
+    ConfigProvider provider = Provider.of<ConfigProvider>(context);
+
     return BottomNavigationBar(
-      onTap: (value) {
+      backgroundColor: Colors.transparent,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.grey.shade400,
+      currentIndex: provider.currentPage,
+      elevation: 0,
+      onTap: (int value) {
         if (value == 0) {
-          navigate(context, const HomePage(title: 'Inicio'));
+          provider.setCurrentPage(value);
         } else {
-          navigate(context, const ConfigPage());
+          provider.setCurrentPage(value);
         }
       },
       items: const <BottomNavigationBarItem>[
