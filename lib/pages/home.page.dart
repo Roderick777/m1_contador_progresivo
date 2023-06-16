@@ -42,49 +42,69 @@ class _HomePageState extends State<HomePage> {
     _bg = Provider.of<ConfigProvider>(context).appBackgorund;
 
     return Center(
-        child: Container(
-      decoration: BoxDecoration(
-          color: Colors.indigo,
-          image: DecorationImage(image: AssetImage(_bg), fit: BoxFit.cover)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text('Cambiar fondo',
-              style: TextStyle(color: Colors.white, fontSize: 20.0)),
-          const SizedBox(height: 20.0),
-          const SizedBox(height: 10.0),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            CircleImgButton(
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.indigo,
+            image: DecorationImage(image: AssetImage(_bg), fit: BoxFit.cover)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'Cambiar fondo',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20.0,
+              ),
+            ),
+            const SizedBox(height: 30.0),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              CircleImgButton(
                 action: () {
                   _updateBg(context.read<ConfigProvider>().bg1);
                 },
-                backgroundImg: context.read<ConfigProvider>().bg1),
-            const SizedBox(width: 10.0),
-            CircleImgButton(
+                backgroundImg: context.read<ConfigProvider>().bg1,
+              ),
+              const SizedBox(width: 10.0),
+              CircleImgButton(
                 action: () {
                   _updateBg(context.read<ConfigProvider>().bg2);
                 },
-                backgroundImg: context.read<ConfigProvider>().bg2)
-          ]),
-          Text('$_counter',
-              style: const TextStyle(color: Colors.white, fontSize: 28.0)),
-          const SizedBox(height: 10.0),
-          Center(
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              CircleButton(
-                  text: '-', action: () => _decrementCounter(), size: 60),
-              const SizedBox(width: 10.0),
-              CircleButton(
-                  text: 'Limpiar',
-                  action: () => _cleanCounter(context),
-                  size: 100),
-              const SizedBox(width: 10.0),
-              CircleButton(
-                  text: '+', action: () => _incrementCounter(), size: 60),
+                backgroundImg: context.read<ConfigProvider>().bg2,
+              ),
             ]),
-          )
-        ],
+            const SizedBox(height: 10.0),
+            Text(
+              '$_counter',
+              style: const TextStyle(color: Colors.white, fontSize: 36.0),
+            ),
+            const SizedBox(height: 10.0),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircleButton(
+                    text: '-',
+                    action: () => _decrementCounter(),
+                    size: 60,
+                  ),
+                  const SizedBox(width: 10.0),
+                  CircleButton(
+                    text: 'Limpiar',
+                    action: () => _cleanCounter(context),
+                    size: 100,
+                  ),
+                  const SizedBox(width: 10.0),
+                  CircleButton(
+                    text: '+',
+                    action: () => _incrementCounter(),
+                    size: 60,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

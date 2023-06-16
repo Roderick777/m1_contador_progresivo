@@ -12,16 +12,17 @@ class MyNavigationBar extends StatefulWidget {
 class _MyNavigationBarState extends State<MyNavigationBar> {
   @override
   Widget build(BuildContext context) {
-    ConfigProvider provider = Provider.of<ConfigProvider>(context);
+    // ConfigProvider provider = Provider.of<ConfigProvider>(context);
 
     return BottomNavigationBar(
       backgroundColor: Colors.transparent,
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.grey.shade400,
-      currentIndex: provider.currentPage,
+      currentIndex: Provider.of<ConfigProvider>(context).currentPage,
       elevation: 0,
       onTap: (int value) {
-        provider.setCurrentPage(value);
+        Provider.of<ConfigProvider>(context, listen: false)
+            .setCurrentPage(value);
       },
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(

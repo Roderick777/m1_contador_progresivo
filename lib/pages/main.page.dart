@@ -27,17 +27,19 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    ConfigProvider configProvider = context.read<ConfigProvider>();
-    _page = configProvider.currentPage;
+    _page = Provider.of<ConfigProvider>(context).currentPage;
 
     return Scaffold(
       extendBody: true,
       body: Container(
-          decoration:
-              const BoxDecoration(color: Color.fromARGB(255, 8, 136, 210)),
-          child: AnimatedSwitcher(
-              duration: const Duration(milliseconds: 300),
-              child: _page == 0 ? _getPage(_page) : _getPage(_page))),
+        decoration: const BoxDecoration(
+          color: Color.fromARGB(255, 8, 136, 210),
+        ),
+        child: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 300),
+          child: _page == 0 ? _getPage(_page) : _getPage(_page),
+        ),
+      ),
       bottomNavigationBar: const MyNavigationBar(),
     );
   }
