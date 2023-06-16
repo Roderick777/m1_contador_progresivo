@@ -21,11 +21,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
       currentIndex: provider.currentPage,
       elevation: 0,
       onTap: (int value) {
-        if (value == 0) {
-          provider.setCurrentPage(value);
-        } else {
-          provider.setCurrentPage(value);
-        }
+        provider.setCurrentPage(value);
       },
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(

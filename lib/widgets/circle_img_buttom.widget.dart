@@ -14,7 +14,7 @@ class CircleImgButton extends StatelessWidget {
         },
         child: CircleAvatar(
           radius: 30,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           child: CircleAvatar(
             backgroundImage:
                 AssetImage(backgroundImg), // 'assets/images/fondopantalla2.jpg'

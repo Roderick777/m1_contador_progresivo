@@ -50,9 +50,7 @@ class _ConfigPageState extends State<ConfigPage> {
                         int numberValue = int.parse(value);
                         Provider.of<ConfigProvider>(context, listen: false)
                             .setCounterAmount(numberValue);
-                      } catch (e) {
-                        print(e.toString());
-                      }
+                      } catch (_) {}
                     },
                     initialValue: Provider.of<ConfigProvider>(context)
                         .counterAmount
