@@ -6,12 +6,14 @@ class ConfigProvider with ChangeNotifier {
   final String _bg2 = 'assets/images/fondopantalla2.jpg';
   String _appBackground = 'assets/images/fondopantalla.jpeg';
   int _currentPage = 0;
+  int _counter = 0;
 
   int get counterAmount => _counterAmount;
   String get appBackgorund => _appBackground;
   String get bg1 => _bg1;
   String get bg2 => _bg2;
   int get currentPage => _currentPage;
+  int get counter => _counter;
 
   void setCounterAmount(int newCounterAmount) {
     _counterAmount = newCounterAmount;
@@ -26,5 +28,9 @@ class ConfigProvider with ChangeNotifier {
   void setCurrentPage(int newPageIndex) {
     _currentPage = newPageIndex;
     notifyListeners();
+  }
+
+  void setCounter(int newCount) {
+    _counter = newCount;
   }
 }

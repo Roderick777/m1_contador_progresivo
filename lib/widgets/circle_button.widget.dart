@@ -20,6 +20,9 @@ class _CircleButtonState extends State<CircleButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: () {
+        widget.action();
+      },
       child: Container(
         width: widget.size,
         height: widget.size,
@@ -34,9 +37,6 @@ class _CircleButtonState extends State<CircleButton> {
           ),
         ),
       ),
-      onTap: () {
-        widget.action();
-      },
     );
   }
 }

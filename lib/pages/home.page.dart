@@ -20,16 +20,21 @@ class _HomePageState extends State<HomePage> {
 
   void _incrementCounter() {
     int counterAmount = context.read<ConfigProvider>().counterAmount;
-    setState(() => _counter = _counter + counterAmount);
+    int newCount = _counter + counterAmount;
+    setState(() => _counter = newCount);
+    Provider.of<ConfigProvider>(context, listen: false).setCounter(newCount);
   }
 
   void _decrementCounter() {
     int counterAmount = context.read<ConfigProvider>().counterAmount;
-    setState(() => _counter = _counter - counterAmount);
+    int newCount = _counter - counterAmount;
+    setState(() => _counter = newCount);
+    Provider.of<ConfigProvider>(context, listen: false).setCounter(newCount);
   }
 
   void _cleanCounter(BuildContext context) {
     setState(() => _counter = 0);
+    Provider.of<ConfigProvider>(context, listen: false).setCounter(0);
     showSnackbar(context, 'Haz reiniciado el contador');
   }
 
@@ -40,6 +45,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     _bg = Provider.of<ConfigProvider>(context).appBackgorund;
+    _counter = Provider.of<ConfigProvider>(context, listen: false).counter;
 
     return Center(
       child: Container(
