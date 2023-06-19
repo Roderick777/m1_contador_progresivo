@@ -9,7 +9,7 @@ class CircleButton extends StatefulWidget {
   });
 
   final String text;
-  final dynamic action;
+  final Function action;
   final double size;
 
   @override

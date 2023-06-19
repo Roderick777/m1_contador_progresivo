@@ -6,6 +6,10 @@ void showSnackbar(BuildContext context, String text, {int duration = 2}) {
       content: Text(text),
       duration: Duration(seconds: duration),
       actionOverflowThreshold: 1,
+      behavior: SnackBarBehavior.floating, // Comportamiento del Snackbar
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0), // Forma del Snackbar
+      ),
     ),
   );
 }

@@ -57,21 +57,24 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 30.0),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              CircleImgButton(
-                action: () {
-                  _updateBg(context.read<ConfigProvider>().bg1);
-                },
-                backgroundImg: context.read<ConfigProvider>().bg1,
-              ),
-              const SizedBox(width: 10.0),
-              CircleImgButton(
-                action: () {
-                  _updateBg(context.read<ConfigProvider>().bg2);
-                },
-                backgroundImg: context.read<ConfigProvider>().bg2,
-              ),
-            ]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleImgButton(
+                  action: () {
+                    _updateBg(context.read<ConfigProvider>().bg1);
+                  },
+                  backgroundImg: context.read<ConfigProvider>().bg1,
+                ),
+                const SizedBox(width: 10.0),
+                CircleImgButton(
+                  action: () {
+                    _updateBg(context.read<ConfigProvider>().bg2);
+                  },
+                  backgroundImg: context.read<ConfigProvider>().bg2,
+                ),
+              ],
+            ),
             const SizedBox(height: 10.0),
             Text(
               '$_counter',

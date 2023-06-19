@@ -7,7 +7,7 @@ class CircleImgButton extends StatelessWidget {
     required this.backgroundImg,
   });
 
-  final dynamic action;
+  final Function action;
   final String backgroundImg;
 
   @override
