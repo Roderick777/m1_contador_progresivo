@@ -50,8 +50,9 @@ class _HomePageState extends State<HomePage> {
     return Center(
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.indigo,
-            image: DecorationImage(image: AssetImage(_bg), fit: BoxFit.cover)),
+          color: Colors.indigo,
+          image: DecorationImage(image: AssetImage(_bg), fit: BoxFit.cover),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

@@ -1,16 +1,7 @@
 # m1_contador_progresivo
 
-A new Flutter project.
+Entregable para proyecto contador progresivo.
 
-## Getting Started
+## Url video presentación del proyecto
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Adjunto video eplicativo del proyecto: https://www.loom.com/share/cb6fde9c832f47ecacbbf87a7df4dbfa

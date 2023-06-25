@@ -19,21 +19,23 @@ class CircleButton extends StatefulWidget {
 class _CircleButtonState extends State<CircleButton> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        widget.action();
-      },
-      child: Container(
-        width: widget.size,
-        height: widget.size,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white.withAlpha(40),
-        ),
-        child: Center(
-          child: Text(
-            widget.text,
-            style: const TextStyle(fontSize: 16.0, color: Colors.white),
+    return ClipOval(
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () {
+            widget.action();
+          },
+          child: Container(
+            width: widget.size,
+            height: widget.size,
+            color: Colors.white.withAlpha(40),
+            child: Center(
+              child: Text(
+                widget.text,
+                style: const TextStyle(fontSize: 16.0, color: Colors.white),
+              ),
+            ),
           ),
         ),
       ),

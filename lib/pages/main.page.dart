@@ -15,16 +15,6 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _page = 0;
 
-  Widget _getPage(int page) {
-    if (page == 0) {
-      return const HomePage(title: '');
-    } else if (page == 1) {
-      return const ConfigPage();
-    } else {
-      return const HomePage(title: '');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     _page = Provider.of<ConfigProvider>(context).currentPage;
@@ -37,7 +27,7 @@ class _MainPageState extends State<MainPage> {
         ),
         child: AnimatedSwitcher(
           duration: const Duration(milliseconds: 300),
-          child: _page == 0 ? _getPage(_page) : _getPage(_page),
+          child: _page == 0 ? const HomePage(title: '') : const ConfigPage(),
         ),
       ),
       bottomNavigationBar: const MyNavigationBar(),
